@@ -1,0 +1,37 @@
+ .selRocketImg{
+    width: 15vw;
+ }
+ .RocketImg{
+    width: 10vw;
+ }
+ .selectedRocket{
+    margin: auto;
+    max-width: fit-content;
+    cursor: pointer;
+ }
+ .options{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3vw;
+ }
+ div p{
+    font-size: 1.5vw;
+    text-align: center;
+ }
+ .title-text{
+    margin-left: 1vw;
+    font-size: 2.8vw;
+    text-align: center;
+    letter-spacing: 0.3vw;
+ }
+ .head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .head img{
+    width: 5vw;
+ }
+.option:hover{
+    cursor: pointer;
+ }

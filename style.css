@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    caret-color: transparent;    
+    font-weight: 900;
+    user-select: none;
+}
+
+body {
+    background: url('Assets/Background.jpg')rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    height: 90vh;
+    position: relative;
+    background-blend-mode: darken;
+    overflow: hidden;
+}
+
+nav{
+    z-index: 10;
+}
+.nav-bar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.5vw;
+    z-index: 10;
+}
+#click{
+    display: none;
+    z-index: 10;
+}
+.icon {
+    width: 4vw;
+    margin: 1vw;
+    cursor: pointer;
+    padding: 1vw;
+    opacity: 0.8;
+}
+
+.icon:hover {
+    box-shadow: 0px 2px 0px white;
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.home-text {
+    max-width: fit-content;
+    margin: auto;
+    padding-top: 13vh;
+}
+
+h1 {
+    font-size: 10vw;
+}
+
+h3 {
+    font-size: 2vw;
+    text-align: center;
+    animation: blinking 0.9s infinite ;
+    color: rgb(157, 255, 0);
+    position: absolute;
+    bottom: 30vh;
+    left: 45vw;
+}
+
+#space-ship {
+    max-width: fit-content;
+    position: absolute;
+    bottom: 8vh;
+    left: 46%;
+    width: 10vw;
+
+}
+
+#space-ship img {
+    width: 100%;
+}
+
+.name-nickname, .instructions-section{
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 2vw;
+    padding: 1vw 2vw;
+    width: 40%;
+    margin: auto;
+    animation: gravity 3s infinite;
+}
+ol{
+    margin: 1vw auto;
+}
+h4{
+    color: black;
+    text-align: center;
+    font-size: 3vw;
+}
+ol li{
+    color: black;
+    font-size: 1.2vw;
+    margin: 0.5vw;
+}
+.name,
+.nick-name {
+    color: black;
+    font-size: 1.5vw;
+    font-weight: 900;
+    text-align: center;
+    margin: 2vw;    
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    width: 30vw;
+    text-align: center;
+    color: black;
+    margin: 1vw;
+    font-size: 1vw;
+}
+
+input:focus {
+    outline: none;
+
+}
+.rock{
+    width: 12vw;
+    position: absolute;
+    z-index: 2;
+    top:-30vw;
+}
+.rock img{
+    width: 100%;
+}
+.rock-belt{
+    z-index: -1;
+    position: absolute;
+    top:3vw;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 90vh;
+    width: 100vw;
+    opacity: 0.81;
+    animation: gravity 3s infinite;
+}
+.rock-2{
+    padding-top: 1vw;
+}
+
+.rules-screen{
+    width: 60%;
+    margin: auto;
+    border-radius: 1vw;
+    padding: 2vw;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+#instruc-head{
+    position: static;
+    color: black;
+    animation: none;
+
+}
+#game-icon{
+    width: 3vw;
+}
+.game-icon{
+    opacity: 1;
+    max-width: fit-content;
+    margin: auto;
+    padding: 2vw;
+    cursor: pointer;
+}
+
+/* Blinking Animation */
+@keyframes blinking {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes slideUp {
+    0% {
+        transform: translateY(0%);
+    
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+@keyframes gravity {
+    0% {
+        transform: translateY(0%);
+    
+    }
+    50%{
+        transform: translateY(-2%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}

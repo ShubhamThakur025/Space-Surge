@@ -1,0 +1,260 @@
+@media (orientation: portrait) {
+    body {
+        height: 100vh;
+        width: 100vw;
+        background: url('Assets/Background-mob.jpg')rgba(0, 0, 0, 0.5) no-repeat;
+        background-size: cover;
+    }
+
+    #click {
+        display: block;
+    }
+
+    .rock-2 {
+        display: none;
+    }
+
+    .rock-1 img {
+        width: 100vw;
+        margin-top: 15vh;
+    }
+
+    .home-text {
+        margin-top: 46vh;
+        font-size: 17vw;
+    }
+
+    #enter {
+        display: none;
+    }
+
+    #space-ship {
+        width: 23vw;
+        height: 23vw;
+        bottom: 2vh;
+        left: 40%;
+    }
+
+    .icon {
+        width: 9vw;
+        margin: 8vw;
+        margin-bottom: 1vw;
+    }
+
+    h3 {
+        font-size: 3.5vw;
+        bottom: 14vh;
+        left: 44vw;
+    }
+
+    ol li {
+        font-size: 3.5vw;
+    }
+
+    .rules-screen {
+        padding: 9vw;
+    }
+
+    #instruc-head {
+        font-size: 4.5vw
+    }
+
+    .rules-screen,
+    .bio {
+        margin-top: 12vh;
+        border-radius: 4vw;
+    }
+
+    #game-icon {
+        width: 10vw;
+    }
+
+    .profile-image img {
+        width: 63vw;
+        border-radius: 4vw;
+    }
+
+    .title {
+        font-size: 6.5vw;
+        margin-bottom: 3vw;
+    }
+
+    .social-links {
+        width: 32vw;
+    }
+
+    .social-links a img {
+        width: 8vw;
+    }
+
+    .name-nickname,
+    .instructions-section {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 2vw;
+        padding: 4vw 7vw;
+        width: 78%;
+        margin: auto;
+        animation: gravity 3s infinite;
+        margin-top: 28vh;
+    }
+
+    .name,
+    .nick-name {
+        font-size: 4.5vw;
+        margin: 6vw;
+    }
+
+    input {
+        font-size: 3vw;
+    }
+
+    .result-image img {
+        position: absolute;
+        top: 10vh;
+        left: 10vw;
+        width: 86vw;
+    }
+
+    .result {
+        margin-top: 40vh;
+    }
+
+    .result-card>h1 {
+        font-size: 17vw;
+    }
+
+    #status,
+    #remark {
+        font-size: 7vw;
+        margin: 4vw;
+    }
+
+    #score {
+        font-size: 14vw;
+    }
+
+    .replay {
+        font-size: 6vw;
+        padding: 2vw 3vw;
+    }
+
+    #remark {
+        margin-bottom: 8vw;
+    }
+
+    .options {
+        flex-direction: column;
+        margin-left: 10vw;
+    }
+
+    .selectedRocket {
+        margin-left: 30vw;
+    }
+
+    .selRocketImg {
+        width: 20vh;
+    }
+
+    .timer>p {
+        font-size: 5vw;
+    }
+
+    #lives {
+        top: 33vw;
+    }
+
+    #lives img {
+        width: 5vw;
+    }
+
+    .timer {
+        left: 3vw;
+    }
+
+    .option {
+        margin: 2vw;
+    }
+
+    .comment {
+        bottom: -6vh;
+        right: 3vw;
+    }
+
+    .alertHeading {
+        font-size: 3vh;
+    }
+
+    .comment p {
+        font-size: 2vh;
+    }
+
+    .RocketImg {
+        width: 15vh;
+    }
+
+    div p {
+        font-size: 4.5vw;
+        text-align: left;
+    }
+
+    .head {
+        margin-top: 1vh;
+    }
+
+    .title-text {
+        font-size: 4.8vw;
+    }
+}
+
+@media (max-width: 375px) {
+    h3 {
+        font-size: 3.5vw;
+        bottom: 16vh;
+        left: 43vw;
+    }
+
+}
+
+@media only screen and (min-width: 912px) and (max-width: 1023px) {
+    body {
+        background: url('Assets/Background-tab.jpg')rgba(0, 0, 0, 0.5) no-repeat;
+        background-size: cover;
+    }
+
+    #space-ship {
+        bottom: -1vh;
+    }
+
+    .home-text {
+        margin-top: 50vh;
+    }
+    #spaceship{
+        bottom: 2vh;
+    }
+}
+
+
+@media only screen and (min-width: 1024px) and (height: 1366px) {
+    body {
+        background: url('Assets/Background.jpg')rgba(0, 0, 0, 0.5) no-repeat;
+        background-size: cover;
+    }
+
+    .rock-1 img {
+        width: 79vw;
+        margin-left: 8vh;
+    }
+}
+@media only screen and (min-width: 540px) and (min-height: 1024px) {
+    body {
+        background: url('Assets/Background.jpg')rgba(0, 0, 0, 0.5) no-repeat;
+        background-size: cover;
+    }
+
+    .rock-1 img {
+        width: 79vw;
+        margin-left: 8vh;
+    }
+    
+}

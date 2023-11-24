@@ -1,0 +1,47 @@
+.result{
+    width: 70vw;
+    margin: auto;
+}
+.result-image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28vw;
+}
+.result-card>h1{
+    color: white;
+    font-size: 7vw;
+    max-width: fit-content;
+    margin: auto;
+}
+#status{
+    color: greenyellow;
+    font-size: 2vw;
+    text-align: center;
+    margin: 1vw;
+
+}
+#score{
+    color: red;
+    font-size: 5vw;
+    text-align: center;
+}
+.replay{
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 1vw;
+    text-decoration: none;
+    font-size: 3vw;
+    margin: auto; 
+    padding: 1vw 2vw;
+}
+.postgame{
+    max-width: fit-content;
+    margin: auto;
+}
+#remark{
+    font-size: 2vw;
+    margin-bottom: 2vw;
+    text-align: center;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Surge - The Cosmic Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="index.html"><img class="icon" src="Assets/Home.png" alt="Home"></a></li>
+            <li><a href="rocket.html"><img class="icon" src="Assets/rokcetIcon.png" alt="SpaceShips"></a></li>
+            <li><a href="rules.html"><img class="icon" src="Assets/Instructions.png" alt="Instructions"></a></li>
+            <li><a href="creator.html"><img class="icon" src="Assets/creator.png" alt="CreatorPage"></a></li>
+        </ul>
+    </nav>
+    <section class="rock-belt">
+        <div class="rock-1">
+            <img src="Assets/astronaut.png" alt="">
+        </div>
+        <div class="rock-2">
+            <img src="Assets/rocketImage.png" alt="">
+        </div>
+    </section>
+    <!-- The starting text -->
+    <div class="home-text">
+        <h1 id="start">START</h1>
+    </div>
+
+    <!-- Input of the name and the nickname -->
+    <div class="name-nickname">
+        <div class="name">
+            ENTER YOUR NAME <br>
+            <input type="text" id="name" required>
+        </div>
+        <div class="nick-name">
+            ENTER YOUR NICKNAME <br>
+            <input type="text" id="nick-name" required>
+        </div>
+    </div>
+
+    <!-- Instructions-page -->
+    <div class="instructions-section">
+        <h4>Instructions</h4>
+        <ol>
+            <li>Press the right arrow (>) and left arrow (<) to control the ship.</li>
+            <li>Dodge through the asteroids and trace your path through the endless space</li>
+            <li>Beware your ship can only take three hits</li>
+            <li>Earn Score and break your own records</li>
+            <li>There will be three sprints of the asteroids. Beware their speed will increase with every sprint!</li>
+        </ol>
+    </div>
+    <h3 id="enter">Press Enter</h3>
+    <h3 id="click">Click here</h3>
+    <!-- SpaceShip -->
+    <div id="space-ship"></div>
+    <script src="app.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
