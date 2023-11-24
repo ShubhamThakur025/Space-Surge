@@ -17,6 +17,10 @@ let sprint;
 let turn = 0;
 let score = 0;
 
+let gameGb = new Audio("Assets/bg-game.mp3")
+gameGb.play();
+gameGb.loop = true;
+
 let pastscore = localStorage.getItem('score') || 0
 score += pastscore
 
@@ -88,7 +92,7 @@ function addLives() {
     livebar.innerHTML = ''
     for (let i = 0; i < lives; i++) {
         livebar.innerHTML +=
-        `
+            `
         <img src = "Assets/heart.png" alt="heart">
         `
     }
@@ -107,13 +111,13 @@ function endGame() {
             location.href = `${target}?${query}`
         } else if (sprint == 2) {
             let query = 'sprint=2'
-            location.href = `${target}?${query}`            
-        }        
-        else if (sprint == 3) {            
-            let query = 'sprint=3'
-            location.href = `${target}?${query}`            
+            location.href = `${target}?${query}`
         }
-        else{
+        else if (sprint == 3) {
+            let query = 'sprint=3'
+            location.href = `${target}?${query}`
+        }
+        else {
             location.href = 'gameOver.html'
         }
     }
@@ -133,13 +137,15 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
-document.addEventListener('touchstart', function(event){
-    let screenWidth = window.innerWidth/2;
+document.addEventListener('touchstart', function (event) {
+    let screenWidth = window.innerWidth / 2;
     let clientX = event.touches[0].clientX
-    if(clientX < screenWidth){
+    let maxLeft = window.innerWidth - spaceShip.offsetWidth;
+    let minLeft = 0
+    if (clientX < screenWidth) {
         spaceShip.style.left = parseInt(spaceShip.style.left) - 40 + 'px'
     }
-    else{
+    else {
         spaceShip.style.left = parseInt(spaceShip.style.left) + 40 + 'px'
     }
 })
@@ -155,11 +161,11 @@ time = 30
 timerID = setInterval(() => {
     time--
     score++
-    localStorage.setItem('score',score)
+    localStorage.setItem('score', score)
     clock.textContent = time
     if (time == 0) {
         clearInterval(timerID)
-        if(sprint == 3){
+        if (sprint == 3) {
             sprint = 4
         }
         endGame()

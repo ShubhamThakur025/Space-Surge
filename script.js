@@ -6,6 +6,14 @@ let commentBox = document.querySelector('.comment')
 let counter = document.getElementById('counter')
 let timerId;
 
+let bgAudio = new Audio("Assets/bg.mp3")
+let countAudio = new Audio("Assets/countdown.mp3")
+let airHorn = new Audio("Assets/airhorn.mp3")
+
+window.onload = () => {
+    bgAudio.play()
+    bgAudio.loop = true
+}
 spaceShip.innerHTML =
     `
 <img src = "${selShip}" alt = "SpaceShip">
@@ -39,23 +47,24 @@ let count = 4
 function updatecount() {
     counter.innerHTML = `<h1 id='count'>${count}</h1>`
 }
-function timer(){
-timerId = setInterval(function () {
-    count--
-    updatecount()
+function timer() {
+    timerId = setInterval(function () {
+        countAudio.play()
+        count--
+        updatecount()
 
-    if (count == 0) {
-        clearInterval(timerId)
-        counter.innerHTML = `<h1 id='count'>GO!</h1>`
-        setTimeout(function () {
-            counter.style.display = 'none'
-            let script = document.createElement('script')
-            script.src = 'game2.js'
-            document.body.appendChild(script)
-            commentf('Start')
-        }, 1000)
-    }
-}, 1000)
+        if (count == 0) {
+            clearInterval(timerId)
+            counter.innerHTML = `<h1 id='count'>GO!</h1>`
+            setTimeout(function () {
+                counter.style.display = 'none'
+                let script = document.createElement('script')
+                script.src = 'game2.js'
+                document.body.appendChild(script)
+                commentf('Start')
+            }, 1000)
+        }
+    }, 1000)
 }
 function commentf(flag) {
     let comment = document.querySelector('.comment')
@@ -71,14 +80,17 @@ let searchParams = new URLSearchParams(window.location.search)
 sprint = searchParams.get('sprint')
 
 function startPage() {
+
+    bgAudio.pause();
     let alert = document.getElementById('alert')
     alert.innerHTML = `
     <h1 class = 'alertHeading' > Sprint-${sprint} is starting! <h2>`
     alert.style.display = 'block'
-    setTimeout(()=>{
+    airHorn.play()
+    setTimeout(() => {
         alert.style.display = 'none'
-    },3000)
+    }, 3000)
     setTimeout(timer, 2000)
 
 }
-setTimeout(startPage,500)
+setTimeout(startPage, 500)

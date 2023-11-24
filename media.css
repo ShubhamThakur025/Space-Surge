@@ -178,7 +178,7 @@
     }
 
     .comment {
-        bottom: -6vh;
+        bottom: 7vh;
         right: 3vw;
     }
 
@@ -208,58 +208,33 @@
     }
 }
 
-@media (max-width: 375px) {
-    h3 {
+@media (max-width: 1024px) and (min-width: 540px){
+    .home-text{
+        padding-top: 27vh;
+    }
+    #space-ship{
+        bottom: 1vh
+    }
+    h3{
+        bottom: 19vh;
+    }
+    div p {
         font-size: 3.5vw;
-        bottom: 16vh;
-        left: 43vw;
     }
-
-}
-
-@media only screen and (min-width: 912px) and (max-width: 1023px) {
-    body {
-        background: url('Assets/Background-tab.jpg')rgba(0, 0, 0, 0.5) no-repeat;
-        background-size: cover;
+    .rules-screen, .bio {
+        margin-top: 3vh;
     }
-    .rock-1 img{
-        width: 45vh;
-        margin-left: 18vw;
+    .result-image img {
+        position: absolute;
+        top: 15vh;
+        left: 21vw;
+        width: 56vw;
     }
-
-    #space-ship {
-        bottom: -1vh;
+    .result-card>h1 {
+        font-size: 11vw;
     }
-
-    .home-text {
-        margin-top: 50vh;
+    #status, #remark {
+        font-size: 3vw;
+        margin: 2.5vw;
     }
-    #spaceship{
-        bottom: 2vh;
-    }
-}
-
-
-@media only screen and (min-width: 1024px) and (height: 1366px) {
-    body {
-        background: url('Assets/Background.jpg')rgba(0, 0, 0, 0.5) no-repeat;
-        background-size: cover;
-    }
-
-    .rock-1 img {
-        width: 79vw;
-        margin-left: 8vh;
-    }
-}
-@media only screen and (min-width: 540px) and (min-height: 1024px) {
-    body {
-        background: url('Assets/Background.jpg')rgba(0, 0, 0, 0.5) no-repeat;
-        background-size: cover;
-    }
-
-    .rock-1 img {
-        width: 79vw;
-        margin-left: 8vh;
-    }
-    
 }
