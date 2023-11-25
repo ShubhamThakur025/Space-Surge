@@ -1,14 +1,12 @@
 //Required DOM elements
 let gameArena = document.querySelector('.game-arena')
 let spaceShip = document.querySelector('#space-ship')
-let selShip = localStorage.getItem('sel')
 let nickname = localStorage.getItem('nName')
 let commentBox = document.querySelector('.comment')
 let counter = document.getElementById('counter')
 let timerId;
 
 //Audio for the game
-let bgAudio = new Audio("Assets/bg.mp3")
 let countAudio = new Audio("Assets/countdown.mp3")
 let airHorn = new Audio("Assets/airhorn.mp3")
 
@@ -16,12 +14,10 @@ let airHorn = new Audio("Assets/airhorn.mp3")
 let count = 4
 let searchParams = new URLSearchParams(window.location.search)
 sprint = searchParams.get('sprint')
-
-//event listener to start the game
-window.onload = () => {
-    bgAudio.play()
-    bgAudio.loop = true
+if (!localStorage.getItem('sel')) {
+    localStorage.setItem('sel', "Assets/Rocket-1.png")
 }
+let selShip = localStorage.getItem('sel')
 spaceShip.innerHTML =
     `
 <img src = "${selShip}" alt = "SpaceShip">
@@ -97,8 +93,6 @@ function commentf(flag) {
 
 //to start the game
 function startPage() {
-
-    bgAudio.pause();
     let alert = document.getElementById('alert')
     alert.innerHTML = `
     <h1 class = 'alertHeading' > Sprint-${sprint} is starting! <h2>`

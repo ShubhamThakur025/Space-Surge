@@ -30,7 +30,7 @@ let data = [
 let selectedCase = document.querySelector('.selectedRocket')
 let optionCase = document.querySelector('.options')
 let ship = localStorage.getItem('sel')
-localStorage.setItem('sel', "Assets/Rocket-1.png")
+
 
 //to fill the available space-craft options    
 function fillOptions(item) {
