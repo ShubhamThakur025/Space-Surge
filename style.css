@@ -137,6 +137,10 @@ input:focus {
 .rock img{
     width: 100%;
 }
+.rock-1 img, .rock-2 img{
+    margin-top: 8vw;
+    width: 100%;
+}
 .rock-belt{
     z-index: -1;
     position: absolute;
