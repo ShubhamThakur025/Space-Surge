@@ -1,3 +1,4 @@
+//Required Dom elements
 let livebar = document.getElementById('lives')
 let clock = document.querySelector('.clock')
 let time = 30;
@@ -17,6 +18,8 @@ let sprint;
 let turn = 0;
 let score = 0;
 
+
+//Game-Audio
 let gameGb = new Audio("Assets/bg-game.mp3")
 let crashBg = new Audio("Assets/box-crash.mp3")
 gameGb.play();
@@ -85,6 +88,7 @@ function checkCollision(rock) {
 //to warn the player about collision
 function warnScreen() {
     let warning = document.getElementById('warnScreen')
+    commentf("Collision")
     warning.style.display = 'block'
     setTimeout(() => {
         warning.style.display = 'none'
@@ -143,6 +147,8 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
+
+//to add functionality over mobile
 document.addEventListener('touchstart', function (event) {
     let screenWidth = window.innerWidth / 2;
     let clientX = event.touches[0].clientX
@@ -164,6 +170,7 @@ function randomNum(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+//timer
 time = 30
 timerID = setInterval(() => {
     time--
@@ -177,9 +184,12 @@ timerID = setInterval(() => {
         }
         endGame()
     }
+    if(time == 15){
+        commentf("HalfTheScore")
+    }
 }, 1000);
 
-
+//to check and commence the sprints
 function startSprint(sprint) {
     switch (true) {
         case sprint == 1: {

@@ -2,28 +2,30 @@
     width: 70vw;
     margin: auto;
 }
+
+.result-image{
+    max-width: fit-content;
+    margin: auto;
+}
 .result-image img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 28vw;
+    width: 14vw;
 }
 .result-card>h1{
     color: white;
-    font-size: 7vw;
+    font-size: 4vw;
     max-width: fit-content;
     margin: auto;
 }
 #status{
     color: greenyellow;
-    font-size: 2vw;
+    font-size: 1vw;
     text-align: center;
-    margin: 1vw;
+    margin: 2vw;
 
 }
 #score{
     color: red;
-    font-size: 5vw;
+    font-size: 3vw;
     text-align: center;
 }
 .replay{

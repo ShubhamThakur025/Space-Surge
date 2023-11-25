@@ -228,17 +228,15 @@
     .rules-screen, .bio {
         margin-top: 3vh;
     }
-    .result-image img {
-        position: absolute;
-        top: 15vh;
-        left: 21vw;
-        width: 56vw;
-    }
+   
     .result-card>h1 {
         font-size: 11vw;
     }
     #status, #remark {
         font-size: 3vw;
         margin: 2.5vw;
+    }
+    .result-image img {
+        width: 69vw;
     }
 }

@@ -1,3 +1,4 @@
+//Array containing the data regarding the space-craft
 let data = [
     {
         src: "Assets/Rocket-1.png",
@@ -25,13 +26,13 @@ let data = [
     }
 ]
 
+//Required DOM elements
 let selectedCase = document.querySelector('.selectedRocket')
 let optionCase = document.querySelector('.options')
-
 let ship = localStorage.getItem('sel')
 localStorage.setItem('sel', "Assets/Rocket-1.png")
 
-    
+//to fill the available space-craft options    
 function fillOptions(item) {
     optionCase.innerHTML = ''
     data.forEach(function (i) {
@@ -46,6 +47,8 @@ function fillOptions(item) {
         }
     })
 }
+
+//event listener to select the desired space-craft
 optionCase.addEventListener('click', function (event) {
     if (event.target.id) {
         let id = event.target.id
@@ -64,6 +67,4 @@ optionCase.addEventListener('click', function (event) {
 
 })
 fillOptions(ship)
-selectedCase.onclick = () =>{
-    location.href = 'game.html?sprint=1'
-}
+

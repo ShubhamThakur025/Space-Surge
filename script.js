@@ -1,3 +1,4 @@
+//Required DOM elements
 let gameArena = document.querySelector('.game-arena')
 let spaceShip = document.querySelector('#space-ship')
 let selShip = localStorage.getItem('sel')
@@ -6,10 +7,17 @@ let commentBox = document.querySelector('.comment')
 let counter = document.getElementById('counter')
 let timerId;
 
+//Audio for the game
 let bgAudio = new Audio("Assets/bg.mp3")
 let countAudio = new Audio("Assets/countdown.mp3")
 let airHorn = new Audio("Assets/airhorn.mp3")
 
+//Required variables
+let count = 4
+let searchParams = new URLSearchParams(window.location.search)
+sprint = searchParams.get('sprint')
+
+//event listener to start the game
 window.onload = () => {
     bgAudio.play()
     bgAudio.loop = true
@@ -18,6 +26,8 @@ spaceShip.innerHTML =
     `
 <img src = "${selShip}" alt = "SpaceShip">
 `
+
+//Array holding the types of comments
 let comments = [
     {
         case: "Start",
@@ -39,14 +49,18 @@ let comments = [
         comment:
             `
         <p class = 'commentPara'>
-        Well Done! Captain <span>${nickname}</span>, <br> You are <br>amazing!
+        Well Done! Captain <span>${nickname}</span>, <br> You are amazing!
         `
     }
 ]
-let count = 4
+
+
+//to check the countdown
 function updatecount() {
     counter.innerHTML = `<h1 id='count'>${count}</h1>`
 }
+
+//to set up the timer
 function timer() {
     timerId = setInterval(function () {
         countAudio.play()
@@ -56,6 +70,8 @@ function timer() {
         if (count == 0) {
             clearInterval(timerId)
             counter.innerHTML = `<h1 id='count'>GO!</h1>`
+
+            //Adds the game2.js file to the game to initiate the sprint
             setTimeout(function () {
                 counter.style.display = 'none'
                 let script = document.createElement('script')
@@ -66,6 +82,8 @@ function timer() {
         }
     }, 1000)
 }
+
+//to display the comment
 function commentf(flag) {
     let comment = document.querySelector('.comment')
     comments.forEach(function (item) {
@@ -76,9 +94,8 @@ function commentf(flag) {
     })
 }
 
-let searchParams = new URLSearchParams(window.location.search)
-sprint = searchParams.get('sprint')
 
+//to start the game
 function startPage() {
 
     bgAudio.pause();
