@@ -18,7 +18,9 @@ let turn = 0;
 let score = 0;
 
 let gameGb = new Audio("Assets/bg-game.mp3")
+let crashBg = new Audio("Assets/box-crash.mp3")
 gameGb.play();
+gameGb.volume = 0.5
 gameGb.loop = true;
 
 let pastscore = localStorage.getItem('score') || 0
@@ -33,7 +35,7 @@ function createRock() {
     let rock = document.createElement('div')
     rock.className = 'rock'
     rock.id = rockId
-    rock.style.left = `${randomNum(10, 70)}vw`
+    rock.style.left = `${randomNum(10, 90)}vw`
     rock.style.top = '-200px'
     let index = rocksArray[randomNum(0, rocksArray.length)];
     let rockImage = document.createElement('img');
@@ -51,6 +53,7 @@ function moveRocks() {
         let topDist = parseInt(rock.style.top) || 0;
         rock.style.top = topDist + rockSpeed + 'px';
         if (checkCollision(rock)) {
+            crashBg.play()
             warnScreen()
             lives--
             if (lives == 0) { endGame() }
@@ -129,10 +132,13 @@ function rockSurge() {
 
 //keydown eventListener
 document.addEventListener('keydown', (e) => {
-    if (e.key == "ArrowLeft") {
+    let spaceShipLeft = parseInt(spaceShip.style.left)
+    let maxLeft = window.innerWidth - spaceShip.offsetWidth;
+    let minLeft = 0
+    if (e.key == "ArrowLeft" && spaceShipLeft > minLeft) {
         spaceShip.style.left = parseInt(spaceShip.style.left) - 50 + 'px'
     }
-    else if (e.key == "ArrowRight") {
+    else if (e.key == "ArrowRight" && spaceShipLeft < maxLeft) {
         spaceShip.style.left = parseInt(spaceShip.style.left) + 50 + 'px'
     }
 })
@@ -140,13 +146,14 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('touchstart', function (event) {
     let screenWidth = window.innerWidth / 2;
     let clientX = event.touches[0].clientX
+    let spaceShipLeft = parseInt(spaceShip.style.left)
     let maxLeft = window.innerWidth - spaceShip.offsetWidth;
     let minLeft = 0
-    if (clientX < screenWidth) {
+    if (clientX < screenWidth && spaceShipLeft > minLeft) {
         spaceShip.style.left = parseInt(spaceShip.style.left) - 40 + 'px'
     }
-    else {
-        spaceShip.style.left = parseInt(spaceShip.style.left) + 40 + 'px'
+    else if (clientX >= screenWidth && spaceShipLeft < maxLeft) {
+        spaceShip.style.left = (spaceShipLeft + 40) + 'px';
     }
 })
 

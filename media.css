@@ -32,7 +32,7 @@
     #space-ship {
         width: 23vw;
         height: 23vw;
-        bottom: 23vh;
+        bottom: 18vh;
         left: 40%;
     }
 
@@ -138,6 +138,7 @@
     .replay {
         font-size: 6vw;
         padding: 2vw 3vw;
+        margin-left: 20vw;
     }
 
     #remark {
@@ -205,6 +206,9 @@
 
     .title-text {
         font-size: 4.8vw;
+    }
+    .rock{
+        width: 20vw;
     }
 }
 

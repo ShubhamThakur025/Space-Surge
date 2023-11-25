@@ -39,7 +39,7 @@ function fillOptions(item) {
             optionCase.innerHTML +=
                 `
             <div class="option">
-                <img src="${i.src}" alt="" class="RocketImg" id="${i.id}">
+                <img src="${i.src}" alt="" class="RocketImg" id="${i.id}" class = "Rocket">
                 <p style="color: ${i.color}">${i.desc}</p>
             </div>
             `
@@ -47,7 +47,7 @@ function fillOptions(item) {
     })
 }
 optionCase.addEventListener('click', function (event) {
-    if (event.target) {
+    if (event.target.id) {
         let id = event.target.id
         let search = data.find(function (e) {
             return e.id == id;
