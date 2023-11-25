@@ -153,7 +153,7 @@ document.addEventListener('touchstart', function (event) {
         spaceShip.style.left = parseInt(spaceShip.style.left) - 40 + 'px'
     }
     else if (clientX >= screenWidth && spaceShipLeft < maxLeft) {
-        spaceShip.style.left = (spaceShipLeft + 40) + 'px';
+        spaceShip.style.left = parseInt(spaceShip.style.left) + 40 + 'px'
     }
 })
 
